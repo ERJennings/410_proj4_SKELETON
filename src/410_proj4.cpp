@@ -88,6 +88,8 @@ int main()
 {
 	thread waiter(doWaiter, 0, "in1.txt");
 	thread baker(doBaker,0);
+	waiter.join();
+	baker.join();
 	audit_results();
 	return SUCCESS;
 }

@@ -86,7 +86,9 @@ void audit_results() {
 
 int main()
 {
-	//TODO your code here
+	thread waiter(doWaiter, 0, "in1.txt");
+	thread baker(doBaker,0);
+	audit_results();
 	return SUCCESS;
 }
 

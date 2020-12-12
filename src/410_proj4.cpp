@@ -86,10 +86,16 @@ void audit_results() {
 
 int main()
 {
-	thread waiter(doWaiter, 0, "in1.txt");
-	thread baker(doBaker,0);
-	waiter.join();
-	baker.join();
+	thread waiterPatrick(doWaiter, 0, "in3.txt");
+	thread bakerEric(doBaker,0);
+	thread bakerJohn(doBaker,0);
+	thread bakerRyan(doBaker,0);
+
+	waiterPatrick.join();
+	bakerEric.join();
+	bakerJohn.join();
+	bakerRyan.join();
+
 	audit_results();
 	return SUCCESS;
 }

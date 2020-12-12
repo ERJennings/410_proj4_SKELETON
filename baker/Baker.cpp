@@ -12,7 +12,6 @@ Baker::~Baker()
 {
 }
 
-//Baker is capitalized, remember for later
 void Baker::bake_and_box(ORDER &anOrder) {
 	Box box;
 	int count = 0;
@@ -31,14 +30,11 @@ void Baker::bake_and_box(ORDER &anOrder) {
 			count = 0;
 		}
 	}
-	
 	//Push remaining partial box
 	if (box.size() != 0) {
 		lock_guard<mutex> lock(mutex_order_outQ);
 		anOrder.boxes.push_back(box);
 	}
-
-
 }
 
 void Baker::beBaker() {
